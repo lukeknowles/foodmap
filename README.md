@@ -9,6 +9,5 @@ Live demo available at https://monixlabs.com/foodmap.
 ### Food bank selection screen
 ![foodmap selection screen](_media/foodmap2.png?raw=true "food bank selection menu")
 
-There are many ways to get GeoJSON representations of anything you could need (cities, school districts, etc.) for free.
-one of the easiest ways is to use Nominatim to get the data via OpenStreetMap.
+There are many ways to get GeoJSON representations of anything you could need (cities, school districts, etc.) for free. One of the easiest methods is to use Nominatim to get the data via OpenStreetMap.
 e.g: https://nominatim.openstreetmap.org/search.php?q=Bonney+Lake+Wa&polygon_geojson=1&format=json
