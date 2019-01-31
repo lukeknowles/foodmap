@@ -9,8 +9,8 @@ $cshMap = file_get_contents("csh.json");
 <head>
     <title>FoodMap - CSH</title>
     <script src="../_assets/jquery/jquery-3.2.1.min.js"></script>
-	<script src="../_assets/semantic/semantic.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="../_assets/semantic/semantic.min.css">
+    <script src="../_assets/semantic/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_assets/semantic/semantic.min.css">
     <style>
         #map
         {
