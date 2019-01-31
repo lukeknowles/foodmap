@@ -8,28 +8,28 @@ $tfpMap = file_get_contents("tfp.json");
 
 <head>
 	<title>FoodMap - TFP</title>
-    <script src="../_assets/jquery/jquery-3.2.1.min.js"></script>
+	<script src="../_assets/jquery/jquery-3.2.1.min.js"></script>
 	<script src="../_assets/semantic/semantic.min.js"></script>
 	<script src="../_assets/bzip2-js/bzip2.js"></script>
-	<link rel="stylesheet" type="text/css" href="../_assets/semantic/semantic.min.css">
-    <style>
-        #map
-    	   {
-            height: 50vh;
-            width: 100vw;
-           }
-    	   
-    	   body
-    	   {
-    		   margin: 0;
-    	   }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../_assets/semantic/semantic.min.css">
+	<style>
+	#map
+	{
+		height: 50vh;
+		width: 100vw;
+	}
+	
+	body
+	{
+		margin: 0;
+	}
+	</style>
 </head>
 
 <body>
-    <div id="map"></div>
-    <script>
-        var map;
+	<div id="map"></div>
+	<script>
+		var map;
 		var geocoder;
 		var markers = [];
 		
@@ -39,27 +39,26 @@ $tfpMap = file_get_contents("tfp.json");
 		function initMap() 
 		{
 			var middle = {lat: 47.450142, lng: -122.308201};
-            map = new google.maps.Map(document.getElementById('map'), {
+			map = new google.maps.Map(document.getElementById('map'), {
 				zoom: 11,
-                center: middle
-            });
-			
+				center: middle
+			});
 			geocoder = new google.maps.Geocoder();
-        }
-        	  
-        function loadGeoJsonString(geoString) 
+		}
+		
+		function loadGeoJsonString(geoString) 
 		{
 			var geojson = (geoString);
-            map.data.addGeoJson(geojson);
+			map.data.addGeoJson(geojson);
 			map.data.setStyle(function(feature) 
 			{
 				var id = feature.getProperty('id');
-        		var color;
-        			
-        		switch(id)
-        		{
-        			case "tukwilasd":
-        				color = "#ed0707";
+				var color;
+				
+				switch(id)
+				{
+					case "tukwilasd":
+						color = "#ed0707";
 						
 						map.data.forEach(function(feature)
 						{
@@ -76,10 +75,10 @@ $tfpMap = file_get_contents("tfp.json");
 								});
 							}
 						});
-        			break;
-        				
+					break;
+					
         			case "buriensd":
-        				color = "#0032bf";
+						color = "#0032bf";
 						
 						map.data.forEach(function(feature)
 						{
@@ -154,10 +153,7 @@ $tfpMap = file_get_contents("tfp.json");
 					}
 					
 					
-					$("#results").fadeIn("fast", function()
-					{
-				
-					});
+					$("#results").fadeIn("fast", function(){});
 				}
 				else
 				{
@@ -167,11 +163,12 @@ $tfpMap = file_get_contents("tfp.json");
 		}
         	  
         function initialize()
-        {
+        { 
         	initMap();
         	loadGeoJsonString(<?php echo($tfpMap); ?>);
         }
     </script>
+	
     <script async defer src=<?php echo("https://maps.googleapis.com/maps/api/js?key=" . MAPS_API_KEY ."&callback=initialize") ?>>
     </script>
 
